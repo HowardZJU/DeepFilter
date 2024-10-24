@@ -9,7 +9,7 @@ from Optim import Optim
 import argparse
 import pandas as pd
 from sklearn.metrics import mean_absolute_error, explained_variance_score, mean_squared_error, median_absolute_error, r2_score
-from models.STANet import DeepFilter
+from STANet import DeepFilter
 from utils import DataS, DataM, mkdir, EarlyStopping, seed_all
 import os.path as osp
 import logging
