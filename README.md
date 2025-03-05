@@ -1,4 +1,4 @@
-# DeepFilter: Accurate and Efficient Process Monitoring for Energy Conversion Plants
+# DeepFilter: An Instrumental Baseline for Accurate and Efficient Process Monitoring
 
 ## Introduction
 
@@ -87,38 +87,3 @@ The DeepFilter model demonstrates superior performance in both accuracy and effi
 
 *Note: Detailed results and analysis can be found in the paper or will be updated here when available.*
 
-## License
-
-[MIT License](LICENSE)
-
-<!-- ## Citation
-
-If you find this repository useful in your research, please consider citing our work:
-
-```bibtex
-@article{deepfilter2023,
-  title={DeepFilter: Accurate and Efficient Process Monitoring for Energy Conversion Plants},
-  author={Your Name and Co-authors},
-  journal={Journal Name},
-  year={2023}
-}
-```
-
-*Note: Update the citation with correct details once the paper is published.* -->
-
-<!-- ## Acknowledgements
-
-We would like to thank all contributors and collaborators who have made this work possible.
-
-## Contact
-
-For any questions or issues, please contact:
-
-- **Your Name**
-- Email: [your.email@example.com](mailto:your.email@example.com)
-
-*Note: Replace "Your Name" and "your.email@example.com" with your actual name and email address.*
-
----
-
-Feel free to contribute to this project by submitting issues or pull requests. -->
