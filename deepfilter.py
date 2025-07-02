@@ -46,7 +46,7 @@ class DeepFilterModel(BaseEstimator, RegressorMixin):
         self.criterionRec = nn.MSELoss()
         self.model = DeepFilter(args, featureNum=self.dimI, outputNum=self.dimO).to(torch.device('cuda:{}'.format(args.device)))
 
-        self.optimizer = Optim(self.model.parameters(), args.optim, args.lr, args.clip)
+        self.optimizer = Optim(self.model.parameters(), args.optim, args.lr, args.clip, args.labda)
         # self.optimizer = torch.optim.SGD(self.model.parameters(), lr=args.lr, momentum=0.8)
         # self.scheduler = optim.lr_scheduler.StepLR(self.optimizer, step_size, gamma)
         
@@ -186,6 +186,8 @@ if __name__ == '__main__':
     parser.add_argument('--decayS', type=float, default=16)
     parser.add_argument('--decayT', type=float, default=1)
     parser.add_argument('--round', type=int, default=2)
+    parser.add_argument('--labda', type=float, default=0.00005)
+
     
     parser.add_argument('--clip', type=float, default=10., help='gradient clipping')
     parser.add_argument('--epochs', type=int, default=200)
