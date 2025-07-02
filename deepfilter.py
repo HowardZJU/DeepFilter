@@ -9,7 +9,7 @@ from Optim import Optim
 import argparse
 import pandas as pd
 from sklearn.metrics import mean_absolute_error, explained_variance_score, mean_squared_error, median_absolute_error, r2_score
-from STANet import DeepFilter
+from model import DeepFilter
 from utils import DataS, DataM, mkdir, EarlyStopping, seed_all
 import os.path as osp
 import logging
@@ -76,17 +76,13 @@ class DeepFilterModel(BaseEstimator, RegressorMixin):
             self.epoch = i
 
             for batchX, batchY in trainLoader:
-
                 self.model.zero_grad()
                 output = self.model(batchX)
                 output = output.reshape(batchY.shape)
-
                 loss = self.criterionRec(output, batchY)  # shape
                 loss.backward()
                 self.optimizer.step()
                 self.trainDict['loss'] = np.append(self.trainDict['loss'], loss.data.cpu().numpy())
-            # self.scheduler.step() 
-            # 
             logging.info('Epoch: {}, Loss: {}'.format(self.epoch, loss.data.cpu().numpy()))
                                                                                                 
             self.valid()    
